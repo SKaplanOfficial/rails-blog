@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
     end
 
     def new
+        @article = Article.new
     end
 
     def edit
@@ -44,6 +45,7 @@ class ArticlesController < ApplicationController
     private
         def article_params
             puts params
+            puts "~~~~~~~~~~~~~~~~~~~~~~~"
             params.require(:article).permit(:title, :text)
         end
 end
